@@ -4,6 +4,8 @@ https://github.com/JRScelza/NEAT-Brain/tree/main/data
 
 NEAT-Brain (Nash Equilibrium Analysis Tool for Brain Metabolism) is an interactive dashboard for the exploration of brain metabolism based on game theory. This software utilizes a modified Bayesian Nash Equilibrium algorithm to model the biochemical resource competition in brain metabolism and the suboptimal payoffs associated with neurodegenerative disease with an emphasis on Alzheimer’s. Alzheimer’s disease (AD) is an age-associated, multifactorial neurodegenerative disorder that is the incurable. 
 
+![alt text](https://github.com/JRScelza/NEAT-Brain/blob/main/brain_metabolism.png?raw=true)
+
 # Project Structure
 
 /src
