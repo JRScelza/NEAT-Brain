@@ -1,4 +1,4 @@
-# Welcome to FRANCIS!
+# Welcome to NEAT-Brain!
 
 FRANCIS (**F**ast g**RA**ph **N**etwork metabolomi**C**s analysis**)** is a graph network-based bioinformatics pipeline for the exploration and analysis of liquid chromatography-mass spectrometry (LC/MS) based metabolomics data either from untargeted or targeted assays and with or without related knowledge bases. The software emphasizes modern and interactive graph network-based visualizations and also includes rudimentary statistical tools for pre- and post- processing methods
 
