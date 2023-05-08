@@ -1,59 +1,84 @@
 # Welcome to NEAT-Brain!
 
-FRANCIS (**F**ast g**RA**ph **N**etwork metabolomi**C**s analysis**)** is a graph network-based bioinformatics pipeline for the exploration and analysis of liquid chromatography-mass spectrometry (LC/MS) based metabolomics data either from untargeted or targeted assays and with or without related knowledge bases. The software emphasizes modern and interactive graph network-based visualizations and also includes rudimentary statistical tools for pre- and post- processing methods
+https://github.com/JRScelza/NEAT-Brain/tree/main/data
 
+NEAT-Brain (Nash Equilibrium Analysis Tool for Brain Metabolism) is an interactive dashboard for the exploration of brain metabolism based on game theory. This software utilizes a modified Bayesian Nash Equilibrium algorithm to model the biochemical resource competition in brain metabolism and the suboptimal payoffs associated with neurodegenerative disease with an emphasis on Alzheimer’s. Alzheimer’s disease (AD) is an age-associated, multifactorial neurodegenerative disorder that is the incurable. 
 
 # Project Structure
 
 /src
 These are all of the tooling modules. For this project the files are provided in Jupyter notebook form in Python+3.1
 
-	#Spectral signal visualization
-	lcms_spectre_exploration.ipynb
+	
+	# NEAT-Brain Game Theory Simulator.ipynb
+	This is the main notebook. It walks throught the statistical analysis and the Nash Equilibrium simulation.
 
-	#Metadata exploration
-	sample_data_exploration.ipynb
+	# constants.ipynb
+	This notebook is a STATIC set of the biochemical reaction constants.
 
-	#Graph network creation
-	graph_network.ipynb
+	# data_generator.ipynb
+	This is a simple script file that can create the data set used in the simulation
 
-	#Statistical packages for analysis of compounds
-	statistical_analysis_functions.ipynb
+	# ODE_functions_timeseries.ipynb
+	This notebook houses all of the functions from the Cloutier et Al. paper that are the differential equations for the dynamic modeling of the reaction curves. 
+
+	# timeseries_visualization.ipynb
+	This is a simple notebook for visualizaing any of the individual curves.
 
 /data
 These are all of the sample data files required for running the programs
 
 
-	#The spectral data for the 8000 compounds
-	compound_data.csv
+	# cloutier_2009_data_w_params.csv
+	The pre-processed data. This includes non-functional parameters from the model that are not used in the simulator.
 
-	#Compund metadata and pathway relations
-	compound_descriptions.csv
+	# cloutier_2009_data.csv
+	The post-processed data. This is the core dataset uses by the simulator
 
-	#Sample demographic data from participants
-	study_metadata.csv
+# Run Jupyter Notebooks
+## Local Python Installation
 
-## Run Jupyter Notebooks
-The only interaction to run the programs are to define you root path:
 
-	#Bring in the data
-	PATH = '{PATH}/data/'
-	data = pd.read_csv(PATH + "compound_descriptions.csv")
+The easiest and most compact way to install Python is to use Miniconda (https://conda.io/en/latest/miniconda.html) distribution. While most people recommend Anaconda, which includes a large collection of Python libraries, I would rather start with barebone installation of Python, and install those packages that are really required. With Miniconda, initial distribution is only around 50 Mb, while Anaconda is close to 500 Mb in size.
 
-Make sure that you specify your own local ROOT. The data pathway is predefined and the individual notebooks also define the data file, no need to change. 
+After installing Miniconda, you would need to install Jupyter:
 
+```
+conda install -c conda-forge notebook
+```
+
+or
+
+```
+pip install notebook
+```
+
+After the installation, navigate to the folder where your notebooks are located, and start Jupyter server:
+
+```
+jupyter notebook
+```
+
+After this, browser window will open, and you are good to go.
+
+----
+
+
+The GitHub also includes information on Python libraries that are required to run the code. This is stored in the requirements.txt file. 
+
+```
+pip install -r requirements.txt 
+```
+
+### Finally, you can navigate to the main simulator file to run NEAT-Brain!
+ <br>
+
+NEAT-Brain Game Theory Simulator.ipynb
+
+The notebook includes its own walkthrough. 
 
 ## Data Source
 
-Journal
-Scientific Reports 
-URL
-https://www.nature.com/articles/s41598-020-72914-7
-Authors
-Inoncent Agueusop, 
-Petra B. Musholt, 
-Beate Klaus, 
-Kendra Hightower & 
-Aimo Kannt
-Citation
-Agueusop, I., Musholt, P.B., Klaus, B. et al. Short-term variability of the human serum metabolome d...
+An integrative dynamic model of brain energy metabolism using in vivo neurochemical measurements, Mathieu Cloutier, Fiachra B. Bolger, John P. Lowry and Peter Wellstead, 2009, Journal of Computational Neuroscience, 27, 391-414. PubMed ID: 19396534
+
+https://models.cellml.org/exposure/6e249a04f5c751e42ba41504d84e6e49
